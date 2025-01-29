@@ -1,0 +1,68 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        nav {
+            background-color:cadetblue;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        nav a {
+            color:brown;
+            text-decoration:double;
+            margin: 0 15px;
+            font-weight: bold;
+            font-style:inherit;
+        }
+        nav a:hover {
+            text-decoration:underline;
+        }
+        div {
+            margin: 20px;
+            padding: 15px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            max-width: 600px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        p {
+            font-size: 16px;
+            margin: 5px 0;
+        }
+        h1{
+            font-size: 40px;
+            font-family:'Courier New', Courier, monospace;
+        }
+    </style>
+</head>
+<body>
+    
+    <nav>
+        <h1 >UNIQ BANK</h1>
+        <a href="{%url 'Home' %}">Home</a>
+        <a href="{% url 'Deposit_Amount' %}">Deposit</a>
+        <a href="{% url 'Withdrawn_amount' %}">Withdraw</a>
+        <a href="{%url 'Transaction_history'%}">Transaction History</a>
+        <a href="{% url 'Balance'%}">Balance Enquiry</a>
+        <a href="{% url 'Statement'%}">Statements</a>
+        <a href="{% url 'Logout_user'%}">Logout</a>
+
+    </nav>
+
+    {% block content %}
+    <h1 style="color:rebeccapurple;text-align: center;background-color: black ;">Welcome to UNIQ BANK</h1>
+    {%endblock%}
+</body>
+</html>

@@ -1,0 +1,43 @@
+{% extends 'Bank_UI.html'%}
+{% block content %}
+<style>
+    /* Style for the table */
+    table {
+        width: 80%; /* Adjust width as needed */
+        margin: 20px auto; /* Center the table */
+        border-collapse: collapse; /* Remove spacing between cells */
+        font-family: Arial, sans-serif; /* Set a clean font */
+        background-color: #f9f9f9; /* Light background color */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    }
+
+    /* Style for table headers */
+    th {
+        background-color: #4CAF50; /* Green background */
+        color: white; /* White text */
+        text-align: center; /* Align text to the left */
+        padding: 10px; /* Add padding */
+        font-size: 16px; /* Adjust font size */
+    }
+
+    /* Style for table rows */
+    td {
+        padding: 10px; /* Add padding to cells */
+        text-align: center; /* Align text to the left */
+        border-bottom: 1px solid #ddd; /* Add subtle border between rows */
+    }
+    
+    </style>
+    <table>
+        <tr>
+            <th>NAME</th>
+            <th>AC_NUM</th>
+            <th>PH_NUM</th>
+        </tr>
+        <tr>
+            <td>{{ cus.Name }}</td>
+            <td>{{ cus.Ac_num }}</td>
+            <td>{{ cus.Ph_number }}</td>
+        </tr>
+    </table>
+    {% endblock %}

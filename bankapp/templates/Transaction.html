@@ -1,0 +1,51 @@
+
+
+{% extends 'Bank_UI.html' %}
+
+{% block content %}
+<style>
+    table {
+        width: 80%; /* Adjust width as needed */
+        margin: 20px auto; /* Center the table */
+        border-collapse: collapse; /* Remove spacing between cells */
+        font-family: Arial, sans-serif; /* Set a clean font */
+        background-color:lightgray; /* Light background color */
+        box-shadow:black; /* Subtle shadow */
+    }
+
+   
+    
+
+    /* Style for table rows */
+    td {
+        padding: 10px; /* Add padding to cells */
+        text-align: center; /* Align text to the left */
+        border-bottom: 1px solid #ddd; /* Add subtle border between rows */
+    }
+    
+    
+  .dep {
+      color: green;
+      font-family: Arial, sans-serif; 
+      font-size: 16px; 
+      margin: 5px 0; 
+  }
+  .wtd {
+      color: red;
+      font-family: Arial, sans-serif; 
+      font-size: 16px; 
+      margin: 5px 0; 
+  }
+</style>
+    <table>
+    {% for i in get %}
+      {% if 'Deposited' in i.History %}
+      <tr><td class="dep">{{ i.History }} || {{ i.Amount }}</td></tr>
+        
+      {% else %}
+      <tr><td class="wtd">{{ i.History }} || {{ i.Amount }}</td></tr>
+        
+      {% endif %}
+    {% endfor %}
+    </table>
+{% endblock %}

@@ -1,0 +1,63 @@
+{% extends 'Bank_UI.html' %}
+{% block content %}
+<style>
+    form {
+        margin: 20px auto;
+        padding: 20px;
+        max-width: 400px;
+        background-color: #f9f9f9;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    form input[type="number"] {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+    form input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        font-weight: bold;
+    }
+    form input[type="submit"]:hover {
+        background-color: #0056b3;
+    }
+    p {
+        color: #555;
+        font-size: 14px;
+        margin: 10px auto;
+        max-width: 400px;
+        text-align: center;
+    }
+    p.success {
+        color: green;
+    }
+    p.error {
+        color: red;
+    }
+</style>
+
+<form method="POST">
+    {% csrf_token %}
+    <input type="number" name="Dpt" placeholder="Enter deposit amount" required>
+    <input type="submit" value="Deposit">
+</form>
+<br>
+{% if messages %}
+    {% for i in messages %}
+    <p class="{% if 'success' in i.tags %}success{% elif 'error' in i.tags %}error{% endif %}">
+        {{ i }}
+    </p>
+    {% endfor %}
+{% endif %}
+{% endblock %}
